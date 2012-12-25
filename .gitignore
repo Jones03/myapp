@@ -1,0 +1,12 @@
+clearcache.sh
+generate-entities-schema.sh
+web/.htaccess
+app/config/parameters.ini
+.travis.yml
+
+app/cache/*
+app/logs/*
+web/media/*
+web/uploads/*
+/nbproject/private/
+vendor/*

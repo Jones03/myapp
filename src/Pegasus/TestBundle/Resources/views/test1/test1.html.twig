@@ -1,0 +1,11 @@
+{% extends 'PegasusTestBundle::layout.html.twig' %}
+{% block title %}test1 --{% endblock %}
+{% block stylesheets %}
+    {% stylesheets '@PegasusTestBundle/Resources/public/css/test1.css' filter='yui_css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+{% block body %}
+      <h1>Test1</h1>
+      <div>testtest2</div>
+{% endblock %}

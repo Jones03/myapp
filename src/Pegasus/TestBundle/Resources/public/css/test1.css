@@ -1,0 +1,25 @@
+/* 
+    Document   : test1
+    Created on : Dec 24, 2012, 11:03:54 AM
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+html, body
+{
+    background-color: black;
+}
+
+body
+{
+    font-size:        14px;
+    font-family:      "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    color:            white;
+}
+
+h1, h2, h3
+{
+    font-family:    Georgia, "Times New Roman", Times, serif;
+    color:          greenyellow;
+}
