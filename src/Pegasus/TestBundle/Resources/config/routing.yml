@@ -1,3 +1,6 @@
 _test1:
   pattern: /test1
   defaults: { _controller: PegasusTestBundle:Test:index }
+_testmails:
+  pattern: /mail
+  defaults: { _controller: PegasusTestBundle:Test:mail }

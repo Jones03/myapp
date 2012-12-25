@@ -16,4 +16,8 @@ class TestController extends Controller {
         return ($this->render('PegasusTestBundle:Test1:Test1.html.twig'));
     }
 
+        public function mailAction() {
+        return ($this->render('PegasusTestBundle:Test1:mail_input.html.twig'));
+    }
+    
 }
