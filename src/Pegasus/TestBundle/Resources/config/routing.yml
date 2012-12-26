@@ -4,3 +4,6 @@ _test1:
 _testmails:
   pattern: /mail
   defaults: { _controller: PegasusTestBundle:Test:mail }
+_form1:
+  pattern: /form1
+  defaults: { _controller: PegasusTestBundle:Default:new }

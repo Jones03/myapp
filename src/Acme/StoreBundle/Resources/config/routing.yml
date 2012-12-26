@@ -1,0 +1,6 @@
+_create_product:
+  pattern: /add
+  defaults: { _controller: AcmeStoreBundle:default:create }
+_show_product:
+  pattern: /show/{id}
+  defaults: { _controller: AcmeStoreBundle:default:show }

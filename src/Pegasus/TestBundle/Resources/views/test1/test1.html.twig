@@ -7,6 +7,8 @@
 {% endblock %}
 {% block content %}
       <h1>Test1</h1>
+      <p>request: {{ app.request }}</p>
+      <p>user: {{ app.user }}</p>
       <div>testtest2</div>
      <img src="{{ asset('bundles/pegasustest/images/koala.jpg') }}" width="30%" alt="koala" />
 {% endblock %}
