@@ -1,0 +1,8 @@
+Pegasus\TestBundle\Entity\Task:
+    properties:
+        task:
+            - NotBlank: ~
+            - MaxLength: 4
+        dueDate:
+            - NotBlank: ~
+            - Type: \DateTime

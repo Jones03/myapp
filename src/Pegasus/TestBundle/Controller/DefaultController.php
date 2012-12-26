@@ -4,6 +4,7 @@ namespace Pegasus\TestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Pegasus\TestBundle\Entity\Task;
 
 /**
@@ -17,18 +18,28 @@ class DefaultController extends Controller {
         return new Response('Hello world!');
     }
     
-    public function newAction(){
-        //http://symfony.com/doc/current/book/forms.html
+    public function newAction(Request $request)
+    {
+        // create a task and give it some dummy data for this example
         $task = new Task();
-        $task->setTask('Build a blog with symfony2');
-        $task->setDueDate(new \DateTime('tomorrow'));
         
-        $form = $this->createForm($task);
-        $form->add('task','text');
-        $form->add('dueDate','date');
-        $form->getForm();
+        $form = $this->createFormBuilder($task)
+            ->add('task', 'text')
+            ->add('dueDate', 'date',array('label' => 'The due date:',))
+            ->getForm();
         
-        return $this->render('PegasusTestBundle:default:new.html.twig',array('form' => $form->createView(),));
+        if ($request->isMethod('POST')){
+            $form->bind($request);
+        
+        
+            if ($form->isValid()){
+                return $this->redirect($this->generateUrl('_test1'));
+            }
+        }else if($request->isMethod('GET')){
+                    return $this->render('PegasusTestBundle:Default:new.html.twig', array(
+            'form' => $form->createView(),));
+        }
+        
     }
 
 }

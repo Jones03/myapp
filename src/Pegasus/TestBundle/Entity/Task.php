@@ -2,56 +2,12 @@
 
 namespace Pegasus\TestBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
-/**
- * Pegasus\TestBundle\Entity\Task
- *
- * @ORM\Table()
- * @ORM\Entity
- */
 class Task
 {
-    /**
-     * @var integer $id
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
-     * @var string $task
-     *
-     * @ORM\Column(name="task", type="string", length=255)
-     */
     private $task;
 
-    /**
-     * @var \DateTime $dueDate
-     *
-     * @ORM\Column(name="dueDate", type="datetime")
-     */
     private $dueDate;
-
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set task
-     *
-     * @param string $task
-     * @return Task
-     */
+    
     public function setTask($task)
     {
         $this->task = $task;
@@ -59,34 +15,18 @@ class Task
         return $this;
     }
 
-    /**
-     * Get task
-     *
-     * @return string 
-     */
     public function getTask()
     {
         return $this->task;
     }
 
-    /**
-     * Set dueDate
-     *
-     * @param \DateTime $dueDate
-     * @return Task
-     */
-    public function setDueDate($dueDate)
+    public function setDueDate(\DateTime $dueDate = null)
     {
         $this->dueDate = $dueDate;
     
         return $this;
     }
 
-    /**
-     * Get dueDate
-     *
-     * @return \DateTime 
-     */
     public function getDueDate()
     {
         return $this->dueDate;
