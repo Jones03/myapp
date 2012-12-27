@@ -1,3 +1,7 @@
+pegasus_blog:
+    resource: "@PegasusBlogBundle/Resources/config/routing.yml"
+    prefix:   /blog
+
 acme_store:
     resource: "@AcmeStoreBundle/Resources/config/routing.yml"
     prefix:   /product

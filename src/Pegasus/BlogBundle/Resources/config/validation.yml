@@ -1,0 +1,12 @@
+Pegasus\BlogBundle\Entity\Blogpost:
+  properties:
+    name:
+      - NotBlank: ~
+      - MaxLength: 20
+    comment:
+      - NotBlank: ~
+      - MaxLength: 100
+Pegasus\BlogBundle\Entity\Category:
+  properties:
+    name:
+      - NotBlank: ~

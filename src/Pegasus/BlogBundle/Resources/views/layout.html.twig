@@ -1,0 +1,6 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {% stylesheets '@PegasusBlogBundle/Resources/public/css/blog.css' filter='yui_css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}

@@ -1,0 +1,9 @@
+_new_post:
+  pattern: /new
+  defaults: { _controller: PegasusBlogBundle:Default:new }
+_show_posts:
+  pattern: /show
+  defaults: { _controller: PegasusBlogBundle:Default:show }
+_blog_index:
+  pattern: /index
+  defaults: { _controller: PegasusBlogBundle:Default:index }

@@ -1,0 +1,17 @@
+{% extends 'PegasusBlogBundle::layout.html.twig' %}
+{% block title %}Blog listing{% endblock %}
+{% block content %}
+    <h1>Blog listing</h1>
+    {% if app.session.hasFlash('notice') %}
+        <div class="flash-notice">
+            {{ app.session.flash('notice') }}
+        </div>
+    {% endif %}
+    {% for blogpost in blogposts %}
+    <div class="blogpost">
+        <div class="blogpost-line1">Posted by <span class="author">{{ blogpost.Name }}</span> on {{ blogpost.createdAt|date("d/m/Y") }}</div>
+        <div class="blogpost-line2">{{ blogpost.Comment }}</div>
+    </div>
+    {% endfor %}
+    {% render "PegasusBlogBundle:Default:new" %}
+{% endblock %}
