@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Pegasus\BlogBundle\Entity\Category
  *
- * @ORM\Table()
+ * @ORM\Table(name="Blog_categories")
  * @ORM\Entity
  */
 class Category
@@ -64,5 +64,45 @@ class Category
     public function getName()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->blogposts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add blogposts
+     *
+     * @param Pegasus\BlogBundle\Entity\Blogpost $blogposts
+     * @return Category
+     */
+    public function addBlogpost(\Pegasus\BlogBundle\Entity\Blogpost $blogposts)
+    {
+        $this->blogposts[] = $blogposts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove blogposts
+     *
+     * @param Pegasus\BlogBundle\Entity\Blogpost $blogposts
+     */
+    public function removeBlogpost(\Pegasus\BlogBundle\Entity\Blogpost $blogposts)
+    {
+        $this->blogposts->removeElement($blogposts);
+    }
+
+    /**
+     * Get blogposts
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getBlogposts()
+    {
+        return $this->blogposts;
     }
 }

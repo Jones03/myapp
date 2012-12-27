@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Pegasus\BlogBundle\Entity\Blogpost
  *
+ * @ORM\HasLifecycleCallbacks()
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Pegasus\BlogBundle\Entity\BlogpostRepository")
  */
@@ -104,6 +105,14 @@ class Blogpost
     {
         return $this->createdAt;
     }
+    
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedValue()
+    {
+        $this->createdAt = new \DateTime();
+    }
 
     /**
      * Set comment
@@ -126,5 +135,28 @@ class Blogpost
     public function getComment()
     {
         return $this->comment;
+    }
+
+    /**
+     * Set category
+     *
+     * @param Pegasus\BlogBundle\Entity\Category $category
+     * @return Blogpost
+     */
+    public function setCategory(\Pegasus\BlogBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+    
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return Pegasus\BlogBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }
