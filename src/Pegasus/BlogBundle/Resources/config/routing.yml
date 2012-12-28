@@ -7,3 +7,6 @@ _show_posts:
 _blog_index:
   pattern: /index
   defaults: { _controller: PegasusBlogBundle:Default:index }
+_blog_remove:
+  pattern: /remove/{id}
+  defaults: { _controller: PegasusBlogBundle:Default:remove }

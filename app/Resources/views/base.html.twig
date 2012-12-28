@@ -8,8 +8,9 @@
     </head>
     <body>
         {% block body %}
-            {% block navbar %}{% endblock %}
-            {% block content %}{% endblock %}
+            <h1>{% block h1title %}{% endblock %}</h1>
+            <div id="navbar">{% block navbar1 %}{% endblock %}</div>
+            <div id="page-content">{% block content %}{% endblock %}</div>
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

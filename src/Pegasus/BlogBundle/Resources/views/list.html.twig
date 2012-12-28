@@ -1,7 +1,7 @@
 {% extends 'PegasusBlogBundle::layout.html.twig' %}
 {% block title %}Blog listing{% endblock %}
+{% block h1title %}Blog listing{% endblock %}
 {% block content %}
-    <h1>Blog listing</h1>
     {% if app.session.hasFlash('notice') %}
         <div class="flash-notice">
             {{ app.session.flash('notice') }}
@@ -9,8 +9,14 @@
     {% endif %}
     {% for blogpost in blogposts %}
     <div class="blogpost">
-        <div class="blogpost-line1">Posted by <span class="author">{{ blogpost.Name }}</span> on {{ blogpost.createdAt|date("d/m/Y") }}</div>
+        <div class="blogpost-wrapper">
+            <div id="remove-blogpost"><a href="{{ path('_blog_remove', { 'id':blogpost.id }) }}">X</a></div>
+            <div class="blogpost-line1">Posted by <span class="author">{{ blogpost.Name }}</span> on {{ blogpost.createdAt|date("d/m/Y") }}</div>
+        </div>
         <div class="blogpost-line2">{{ blogpost.Comment }}</div>
+        {% if blogpost.Category.name %}
+        <div class="blogpost-category">{{ blogpost.Category.name }}</div>
+        {% endif %}
     </div>
     {% endfor %}
     {% render "PegasusBlogBundle:Default:new" %}

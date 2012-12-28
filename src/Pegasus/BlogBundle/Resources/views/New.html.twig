@@ -4,6 +4,7 @@
             <table id="blog-form">
                 <tr><td>{{ form_label(form.Name, 'Your name') }}</td><td>{{ form_widget(form.Name) }} {{ form_errors(form.Name) }}</td></tr>
                 <tr><td>{{ form_label(form.Comment, 'Message') }}</td><td>{{ form_widget(form.Comment) }} {{ form_errors(form.Comment) }}</td></tr>
+                <tr><td>{{ form_label(form.Category, 'Category') }}</td><td>{{ form_widget(form.Category) }} {{ form_errors(form.Category) }}</td></tr>
             </table>
         {{ form_rest(form) }}
         <input type="Submit" />

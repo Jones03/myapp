@@ -44,7 +44,7 @@ class Blogpost
     private $comment;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="blogposts")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="blogposts",cascade={"persist"})
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;

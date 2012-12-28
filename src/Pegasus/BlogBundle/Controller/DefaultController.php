@@ -19,7 +19,6 @@ class DefaultController extends Controller
     }
     public function newAction(Request $request)
     {
-        //add categories: http://symfony.com/doc/current/book/forms.html#embedded-forms
         $blogPost = new blogpost;
         $form = $this->createForm(New BlogpostType(), $blogPost);
         if ($request->isMethod("POST")){         
@@ -51,5 +50,24 @@ class DefaultController extends Controller
         }
         
         return $this->render('PegasusBlogBundle::list.html.twig',array('blogposts' => $blogposts,));
+    }
+    public function removeAction($id)
+    {
+        //URL pattern: /remove/{id}
+        $blogpost = new Blogpost;
+        $blogpost = $this->getDoctrine()
+                ->getRepository('PegasusBlogBundle:Blogpost')
+                ->find($id);
+        if (!$blogpost){
+            throw new \Exception('No blogpost was selected');
+        }
+        $em = $this->getDoctrine()->getManager();
+        //var_dump($blogpost);
+        //exit;
+        $em->remove($blogpost);
+        $em->flush();
+        $this->get('session')->setFlash('notice','The post has been removed');
+        
+        return $this->redirect($this->generateurl('_show_posts'));
     }
 }
