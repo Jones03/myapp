@@ -1,0 +1,128 @@
+/* 
+    Document   : test1
+    Created on : Dec 24, 2012, 11:03:54 AM
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+html, body
+{
+    background-color: black;
+    margin-left: 5px;
+}
+
+body
+{
+    font-size:        14px;
+    font-family:      "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    color:            white;
+    width: 815px;
+}
+
+h1, h2, h3
+{
+    font-family:    'Courier New',Courier,monospace;
+    color:          greenyellow;
+}
+a,a:active,a:hover,a:visited
+{
+    color:white;
+}
+.author
+{
+    color:greenyellow;
+    font-weight: bold;
+}
+div.blogpost
+{ 
+
+   background-color: grey;
+   padding-left: 5px;
+   padding-bottom: 10px;
+   padding-top: 10px;
+   margin-bottom: 5px;
+
+}
+
+div.flash-notice
+{
+    padding-left: 5px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    background-color: grey;
+    border: solid greenyellow;
+
+}
+
+div.blogpost-line2
+{
+
+}
+
+div.blogpost-line1
+{
+    padding-bottom: 5px;
+
+}
+
+table#blog-form td
+{
+   padding-right: 20px;
+}
+
+div.blogpost-category
+{
+    background-color: black;
+    border-radius:4px;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+div.blogpost-wrapper
+{
+
+}
+
+div#remove-blogpost
+{
+    
+    display:block;
+    position: absolute;
+    left:770px;
+    font-weight: bold;
+
+}
+
+div#remove-blogpost a
+{
+    text-decoration: none;
+    color: yellowgreen;
+}
+
+div#navbar 
+{
+    display:block;
+    float:left;
+    width:115px;
+    background-color: grey;
+    
+}
+
+div#navbar ul
+{
+    list-style-image: none;
+    list-style-type: none;
+    padding-left: 10px;
+
+}
+
+div#page-content
+{
+    display:block;
+    float:left;
+    width:650px;
+    margin-left: 10px;
+
+}
